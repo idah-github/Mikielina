@@ -18,6 +18,6 @@ Class Signup extends CI_Controller{
 
     }
     public function index(){
-        $this->load->view('');
+        $this->load->view('Member/Signup');
     }
 }

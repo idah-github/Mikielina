@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap');
+
+
+:root{
+    --side-bg:#eaf4fc;
+    --primary-color: #f20089;
+    
+    --text-color: #fff;
+    --light-color: #ffff;
+    --dark-color: #000;
+    --danger-color: #eb1a41;
+    --icon-bg:#eaf4fc;
+}
+
+
+body{
+    font-family: 'Bona Nova', serif;
+
+    font-size:14pt;
+    background:#fff;
+
+}
+
+
+@media all and (min-width:1200px){
+.login-container{
+    width: 800px;
+    height:500px;
+    margin:auto;
+    background:#fff;
+    transform: translateY(10%);
+    display: flex;
+    -webkit-box-shadow: -1px 0px 5px 4px rgba(0,0,0,0.15);
+-moz-box-shadow: -1px 0px 5px 4px rgba(0,0,0,0.15);
+box-shadow: -1px 0px 5px 4px rgba(0,0,0,0.15);
+border-radius:12pt;
+}
+.login-container .form-div{
+height:100%;
+padding:50px 20px;
+flex:1;
+}
+.login-container .form-div h4{
+    font-weight: 800;
+    margin: 15px 0;
+    color:var(--primary-color);
+}
+.login-container .image-div{
+background-size: cover;
+background-repeat: no-repeat;
+height:500px;
+flex:1;
+position: relative;
+
+}
+.login-container .image-div img{
+position: absolute;
+width: 100%;
+height:100%;
+}
+.login-container .btn{
+    width:120px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight:600;
+}
+}
+
+@media all and (min-width:768px) and (max-width: 1199px){
+    .login-container{
+        width: 80%;
+        height:500px;
+        margin:auto;
+        background:#fff;
+        transform: translateY(10%);
+        display: flex;
+    }
+    .login-container .form-div{
+        height:100%;
+        padding:50px 20px;
+        flex:1;
+        }
+    .login-container .form-div h4{
+        font-weight: 800;
+        margin: 15px 0;
+        color:var(--primary-color);
+        font-size: 22pt;
+    }
+    .login-container .image-div{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:500px;
+    flex:1;
+    position: relative;
+    
+    }
+    .login-container .image-div img{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    }
+    .login-container .btn{
+        width:120px;
+        background-color: var(--primary-color);
+        color: #fff;
+        font-weight:600;
+    }
+}
+@media all and (min-width:550px) and (max-width:767px){
+    .login-container{
+        width: 90%;
+        height:400px;
+        margin:auto;
+        background:#fff;
+        transform: translateY(10%);
+        display: flex;
+        padding:20px 15px;
+    }
+    .login-container .form-div{
+    height:100%;
+    padding:20px 20px;
+    flex:1;
+    }
+    .login-container .form-div h4{
+        font-weight: 800;
+        margin: 15px 0;
+        color:var(--primary-color);
+        font-size:22pt;
+    }
+    .login-container .image-div{
+display: none;
+    
+    }
+    .login-container .btn{
+        width:120px;
+        background-color: var(--primary-color);
+        color: #fff;
+        font-weight:600;
+    }
+
+}
+@media all and (max-width: 549px){
+    .login-container{
+        width: 90%;
+        height:600px;
+        margin:auto;
+        background:#fff;
+        transform: translateY(10%);
+        display: flex;
+        padding:20px 15px;
+    }
+    .login-container .form-div{
+    height:100%;
+    padding:20px 20px;
+    flex:1;
+    }
+    .login-container .form-div h4{
+        font-weight: 800;
+        color: var(--primary-color);
+        font-size: 22pt;
+        margin: 15px 0;
+    }
+    .login-container .image-div{
+display: none;
+    
+    }
+    .login-container .btn{
+        width:120px;
+        background-color: var(--primary-color);
+        color: #fff;
+        font-weight:600;
+    }
+}

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-Class Dashboard extends CI_Controller{
+Class Approval extends CI_Controller{
     public function __construct()
     {
 
@@ -18,7 +18,7 @@ Class Dashboard extends CI_Controller{
 
     }
     public function index(){
-        $this->load->view('Admin/Dashboard');
+        $this->load->view('Admin/Approval');
     }
 }
 

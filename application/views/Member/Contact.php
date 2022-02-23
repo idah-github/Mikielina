@@ -20,11 +20,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" href="<?php echo base_url('assets/Member/css/main.css')?>">
  
 
-  <title>Mikielina</title>  
-
+  <title>Title page</title>  
 </head>
 
-<body style="background-image: url(assets/images/home.jpg);" >
+<body>
 
  <!-- Add your content of header -->
 <header>
@@ -46,10 +45,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <ul class="nav navbar-nav navbar-right">
         <li> <a href="<?php echo site_url('Member/Index')?>" class=" active"> <i class="fa fa-fw fa-home"></i> Home </a></li>
           <li><a href="<?php echo site_url('Member/Home')?>" title=""> About</a></li>
-          <li><a href="<?php echo site_url('Member/Application')?>" title="">Application</a></li>
+          <li><a href="<?php echo site_url('Member/Components')?>" title="">Application</a></li>
           <li><a href="<?php echo site_url('Member/Contact')?>" title="">Contact</a></li>
           <li><a href="<?php echo site_url('Member/Loan')?>" title="">Loan</a></li>
-          <li><a href="<?php echo site_url('Member/Login')?>" title=""> <i class="fa fa-fw fa-user"></i> Login</a></li>
+          <li><a href="<?php echo site_url('Member/Login')?>" title=""> <i class="fa fa-fw fa-user"></i>Login</a></li>
           <li>
             <p>
               <a href="<?php echo site_url('Member/Signup')?>" class="btn btn-primary navbar-btn" title="">Join Now</a>
@@ -64,75 +63,63 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-
-<!--div class="">
+<div class="section-container no-padding">
     <div class="container">
         <div class="row">
-
             <div class="col-xs-12">
-               <img class="img-responsive" src="./assets/images/home.jpg">
+                <div id="map"></div>
             </div>
-        </div>
-    </div>
-  </div-->
+            <div class="col-xs-12">
 
-<div class="section-container">
-    <div class="container">
-        <div class="row">
-               <div class="col-xs-12 col-md-8 col-md-offset-2">
-                    <div class="text-center">
-                    <h1>Mikielina</h1>
-                     </div>   
-                        <p class="section-container-spacer">Auctor augue mauris augue neque. Posuere lorem ipsum dolor sit amet consectetur adipiscing. Porta
-                            non pulvinar neque laoreet. Viverra ipsum nunc aliquet bibendum. Iaculis urna id volutpat lacus.
-                            Turpis egestas pretium aenean pharetra magna ac. Id cursus metus aliquam eleifend mi. Odio tempor
-                            orci dapibus ultrices in iaculis. Lacus luctus accumsan tortor posuere ac ut consequat semper.
-                            Tincidunt ornare massa eget egestas purus viverra accumsan. Odio euismod lacinia at quis. Sit
-                            amet nulla facilisi morbi. At varius vel pharetra vel turpis nunc eget lorem dolor. Feugiat vivamus
-                            at augue eget. Feugiat nisl pretium fusce id velit ut. Venenatis tellus in metus vulputate eu
-                            scelerisque felis imperdiet. Ut placerat orci nulla pellentesque. Laoreet suspendisse interdum
-                            consectetur libero id.
-                        </p>
-
-                    <div class="row section-container-spacer">
-                        <div class="col-md-6">
-                            <img class="img-responsive" src="./assets/images/img-03.jpg">
-                        </div>
-                        <div class="col-md-6">
-                            <img class="img-responsive" src="./assets/images/img-02.jpg">
-                        </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form action="" class="reveal-content contact-form">
+                            <div class="form-group">
+                                <input type="name" class="form-control" id="name" placeholder="Full name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" placeholder="Enter your message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg">Send</button>
+                        </form>
                     </div>
 
-               </div>
-               
-                <div class="col-xs-12 col-md-8 col-md-offset-2">
-              
-                        <p>
-                            Non blandit massa enim nec dui nunc mattis enim ut. Cursus in hac habitasse platea dictumst quisque sagittis
-                            purus Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Adipiscing commodo elit at imperdiet dui accumsan sit. Ipsum
-                            dolor sit amet consectetur adipiscing elit. Integer quis auctor elit sed. In pellentesque massa
-                            placerat duis ultricies. Interdum consectetur libero id faucibus nisl tincidunt. Condimentum
-                            mattis pellentesque id nibh tortor id aliquet</p>
-                            <small class="signature pull-right">Team</small>
+
+                    <div class="col-md-5 col-md-offset-1">
+                            
+                        <h3>Administration</h3>
+                        
+                        <div>
+                            <p>42 rue Rouelle <br/>75015 Meru Kenya</p>
+                        </div>
+                        <div>
+                            <p>contact@mikielina.com<br>+254 45 31 64 32</p>
+                        </div>
+                    
+                        <div>
+                            <h3></h3>
+                        </div>
+                        <div>
+                            <p>To apply for a membership with our us, please feel free to fill the application form
+                                </p>
+                        </div>
+                       
+                    </div>
                 </div>
+
+
             </div>
-
-
-
 
         </div>
 
     </div>
-
-
-
 </div>
-
-
-
-
-
 
 
 <footer>
@@ -145,7 +132,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
 
                     <div class="col-md-4">
-                        <h4>Do you like ? Share this !</h4>
+                        <h4>Thankyou</h4>
                         <p>
                             <a href="https://facebook.com/" class="social-round-icon white-round-icon fa-icon" title="">
                             <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -157,11 +144,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <i class="fa fa-linkedin" aria-hidden="true"></i>
                           </a>
                         </p>
-                        <!--p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/" class="link-like-text" title="Create website with free html template">Mashup Template</a>/<a href="http://www.unsplash.com/" class="link-like-text" title="Beautiful Free Images">Unsplash</a></small></p-->    
+                        <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/" class="link-like-text" title="Create website with free html template">Mashup Template</a>/<a href="http://www.unsplash.com/" class="link-like-text" title="Beautiful Free Images">Unsplash</a></small></p>    
                     </div>
 
                     <div class="col-md-4">
-                        <h4>Join</h4>
+                        <h4>Apply Now</h4>
                         
                         <div class="form-group">
                             <div class="input-group">
@@ -198,7 +185,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   ga('send', 'pageview');
 </script>
 
---> 
+-->
+<!-- Google maps  -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzA22auDNIFSRiTPytfZVhtuFG_KHBhFQ&callback=googleMapInit"></script>
+<!-- end Google Maps -->
+
+
+
 <script type="text/javascript" src="./main.41beeca9.js"></script></body>
 
 </html>

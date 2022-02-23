@@ -1,0 +1,26 @@
+body{
+    background-image: url(images/fahm.jpg);
+    background-color: rgb(64, 167, 167);
+}
+h2{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+.images{
+    background-color: rgba(0,0,0,.2);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0; box-sizing: border-box;
+    display: block;
+    font-size: 15px;
+    line-height: 1.81;
+    color: #555;
+    -webkit-tap-highlight-color: blanchedalmond;
+}
+.image-responsive{
+    align-items: center;
+}
