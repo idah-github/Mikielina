@@ -25,19 +25,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <h4 class="text-center"> Admin Login</h4>
      <?php 
 
-    // $attributes = array();
-
    echo form_open('admin/Login/login_admin');
+   
     ?>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Username</label>
         <input type="text" required name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
 
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Access Code</label>
-        <input type="number" required name="accesscode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      </div>
+
 
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Password</label>

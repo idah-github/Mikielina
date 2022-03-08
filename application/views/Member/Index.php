@@ -49,15 +49,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <ul class="nav navbar-nav navbar-right">
           <li> <a href="<?php echo site_url('Member/Index')?>" class=" active"> <i class="fa fa-fw fa-home"></i> Home </a></li>
           <li><a href="<?php echo site_url('Member/Home')?>" title=""> About</a></li>
-          <li><a href="<?php echo site_url('Member/Application')?>" title="">Application</a></li>
-          <li><a href="<?php echo site_url('Member/Contact')?>" title=""><i class="fa fa-fw fa-envelope"></i>Contact</a></li>
-          <li><a href="<?php echo site_url('Member/Loan')?>" title="">Loan</a></li>
-          <li><a href="<?php echo site_url('Member/Login')?>" title=""> <i class="fa fa-fw fa-user"></i> Login</a></li>
-          <li>
-            <p>
-              <a href="<?php echo site_url('Member/Signup') ?>"  class="btn btn-primary navbar-btn" title="">Join Us Now</a>
-            </p>
-          </li>
+            <?php if(isset($_SESSION['Username'])):?>
+                <li><a href="<?php echo site_url('Member/Application')?>" title="">Application</a></li>
+                <li><a href="<?php echo site_url('Member/Contact')?>" title=""><i class="fa fa-fw fa-envelope"></i>Contact</a></li>
+                <li><a href="<?php echo site_url('Member/Loan')?>" title="">Loan</a></li>
+            <?php else:?>
+                <li><a href="<?php echo site_url('Member/Login')?>" title=""> <i class="fa fa-fw fa-user"></i> Login</a></li>
+                <li>
+                    <p>
+                    <a href="<?php echo site_url('Member/Signup') ?>"  class="btn btn-primary navbar-btn" title="">Join Us Now</a>
+                    </p>
+                </li>
+            <?php endif;?>
+
+
           
         </ul>
       </div>
