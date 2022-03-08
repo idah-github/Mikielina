@@ -130,7 +130,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-<footer>
+<!-- <footer>
     <div class="section-container footer-container">
         <div class="container">
             <div class="row">
@@ -172,7 +172,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </div>
     </div>
-</footer>
+</footer> -->
 
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {

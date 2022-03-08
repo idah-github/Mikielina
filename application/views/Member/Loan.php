@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" href="<?php echo base_url('assets/Member/css/main.css')?>">
  
 
-  <title>Title page</title>  
+  <title>Loans</title>  
   
 </head>
 
@@ -95,7 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li>Gravida arcu ac tortor dignissim</li>
                     </ul>
 
-                    <a href="contact.html" class="btn btn-primary" title="">Apply Now</a>
+                    <a href="<?php echo site_url('Member/Apply')?>" class="btn btn-primary navbar-btn" title="">Apply Now</a>
                 </div>
 
             </div>
@@ -112,7 +112,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li>Gravida arcu ac tortor dignissim convallis aenean</li>
                     </ul>
                     
-                    <a href="contact.html" class="btn btn-primary" title="">Apply Now</a>
+                    <a href="<?php echo site_url('Member/Apply')?>" class="btn btn-primary navbar-btn" title="">Apply Now</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -128,7 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li>Gravida arcu ac tortor dignissim convallis aenean</li>
                         <li>Gravida arcu ac tortor dignissim</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary" title="">Apply Now</a>
+                    <a href="<?php echo site_url('Member/Apply')?>" class="btn btn-primary navbar-btn" title="">Apply Now</a>
                 </div>
             </div>
         </div>
@@ -137,7 +137,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>  
 
 
-<footer>
+<!-- <footer>
     <div class="section-container footer-container">
         <div class="container">
             <div class="row">
@@ -179,7 +179,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </div>
     </div>
-</footer>
+</footer> -->
 
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {

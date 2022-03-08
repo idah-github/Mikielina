@@ -135,7 +135,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-<footer>
+<!-- <footer>
     <div class="section-container footer-container">
         <div class="container">
             <div class="row">
@@ -157,7 +157,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <i class="fa fa-linkedin" aria-hidden="true"></i>
                           </a>
                         </p>
-                        <!--p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/" class="link-like-text" title="Create website with free html template">Mashup Template</a>/<a href="http://www.unsplash.com/" class="link-like-text" title="Beautiful Free Images">Unsplash</a></small></p-->    
+                        <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/" class="link-like-text" title="Create website with free html template">Mashup Template</a>/<a href="http://www.unsplash.com/" class="link-like-text" title="Beautiful Free Images">Unsplash</a></small></p>
                     </div>
 
                     <div class="col-md-4">
@@ -177,7 +177,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </div>
     </div>
-</footer>
+</footer> -->
 
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {

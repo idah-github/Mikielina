@@ -74,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Adipiscing commodo elit at imperdiet dui accumsan sit. Ipsum dolor sit
                     amet consectetur adipiscing elit. </p>
-                 <a href="about.html" title="" class="btn btn-lg btn-primary">Save With Us Now</a>
+                 <a href="<?php echo base_url('Member/Signup')?>" title="" class="btn btn-lg btn-primary">Save With Us Now</a>
             </div>
            
         </div>
@@ -171,7 +171,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div> -->
 
 
-<div class="section-container background-color-container white-text-container">
+<!-- <div class="section-container background-color-container white-text-container">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
@@ -185,7 +185,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </div>
      </div>
- </div>
+ </div> -->
 
  <!--div class="section-container">
     <div class="container">
@@ -238,7 +238,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-<footer>
+<!-- <footer>
     <div class="section-container footer-container">
         <div class="container">
             <div class="row">
@@ -280,7 +280,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </div>
     </div>
-</footer>
+</footer> -->
 
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {

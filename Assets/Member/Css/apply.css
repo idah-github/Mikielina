@@ -1,0 +1,14 @@
+form{
+    width: 900px;
+    height: 100%;
+    color: aquamarine;
+    opacity: 1;
+   padding: 20px;
+   align-content: center;
+   text-align: center;
+   background-color: white;
+   font-size: larger;
+}
+.card-body{
+    background-color: rgb(242, 240, 247);
+}

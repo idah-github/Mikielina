@@ -15,21 +15,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <title>Mikielina IS</title>
 <body >
   
- <form class="myform">
+ <form class="myform" method="POST" action="Login/login_user">
      <h3 style="text-align: center;">Have an account? Login</h3>
-    
-     <label for="username">Username</label> <br>
-        <input type="text" placeholder="name" id="inputusername" class="form-control"> <br>
+     <?php if(isset($validation)):?>
+                    <div class="alert alert-danger"><?= $validation->listErrors() ?></div>
+                <?php endif;?> 
+     <label for="Inputforusername">Username</label> <br>
+        <input type="username" placeholder="name" name="username" id="inputusername" class="form-control"> <br>
      <!--label for="email">Email address</label> <br>
         <input type="email"  placeholder="emailaddress" id="inputemail" class="form-control"> <br-->
     <label for="password">Password</label> <br>
-        <input type="password" placeholder="password" id="inputpassword" class="form-control">
+        <input type="password" placeholder="password" name="password" id="inputpassword" class="form-control">
         <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
         <br>
-        <button>
+        <button type="submit">
             <span>Login</span>
             <div class="liquid"></div>
         </button>
+
     <label class="checkbox-wrap checkbox-primary">Remember Me
         <input type="checkbox" checked>
             <span class="checkmark"></span>
@@ -43,7 +46,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	          	<a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
 	          </div>  
         <h3 class="w-100 text-center">&mdash; Dont have an account?  <a href="<?php echo site_url('Member/Signup') ?>" class="btn btn-primary navbar-btn" title="">Signup</a> &mdash;</h3>
- <footer>
+</form>
+        <footer>
     <div class="section-container footer-container">
         <div class="container">
             <div class="row">
