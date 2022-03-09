@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
   <meta charset="8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<?php echo base_url('assets/Member/css/login.css')?>">
@@ -16,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body >
   
  <form class="myform" method="POST" action="Login/login_user">
-     <h3 style="text-align: center;">Have an account? Login</h3>
+     <h3 style="text-align: center;">Sign In</h3>
      <?php if(isset($validation)):?>
                     <div class="alert alert-danger"><?= $validation->listErrors() ?></div>
                 <?php endif;?> 
@@ -26,17 +27,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <input type="email"  placeholder="emailaddress" id="inputemail" class="form-control"> <br-->
     <label for="password">Password</label> <br>
         <input type="password" placeholder="password" name="password" id="inputpassword" class="form-control">
-        <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
         <br>
-        <button type="submit">
+
+        <label class="checkbox-wrap checkbox-primary">Remember Me
+        <input type="checkbox" >
+            <span class="checkmark"></span>
+        </label>
+        <br>
+        <button type="submit" class="btn  text-white bg-danger">
             <span>Login</span>
             <div class="liquid"></div>
         </button>
 
-    <label class="checkbox-wrap checkbox-primary">Remember Me
-        <input type="checkbox" checked>
-            <span class="checkmark"></span>
-        </label>
+
         <div class="w-50 text-md-right">
             <a href="#" style="color: #fff">Forgot Password</a>
         </div>
@@ -45,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	          	<a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
 	          	<a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
 	          </div>  
-        <h3 class="w-100 text-center">&mdash; Dont have an account?  <a href="<?php echo site_url('Member/Signup') ?>" class="btn btn-primary navbar-btn" title="">Signup</a> &mdash;</h3>
+        <h6 class="w-100 text-center">&mdash; Dont have an account?  <a href="<?php echo site_url('Member/Signup') ?>" class="navbar-btn text-white" title="">Signup</a> &mdash;</h6>
 </form>
         <footer>
     <div class="section-container footer-container">
@@ -76,7 +79,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script type="text/javascript" src="./main.41beeca9.js"></script></body>
     <!--label for="male">Male</label> 
     <input type="radio"> 

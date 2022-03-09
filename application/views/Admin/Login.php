@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css')?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/admin/css/login.css')?>">
 </head>
-<body>
+<body >
  <?php
    // $this->load->view('common/flash_messages');
 ?> 
@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <!-- end of form -->
     </div>
   <div class="image-div">
-      <img src="<?php echo base_url('uploads/bg/logo2.png')?>" alt="">
+      <img src="<?php echo base_url('assets/Member/images/bank.jpg')?>" alt="">
     </div> 
 </div>
 

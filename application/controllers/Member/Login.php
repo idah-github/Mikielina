@@ -30,7 +30,7 @@ Class Login extends CI_Controller{
         $result =$this->Login_Model->check_login($username, $password);
 
         if($result == true){
-            redirect(site_url('Member/Home'));
+            redirect(site_url('Member/Index'));
         }
         else{
             // echo "Hello World";

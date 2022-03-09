@@ -19,15 +19,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link href="./assets/favicon.ico" rel="icon">
   <link rel="stylesheet" href="<?php echo base_url('assets/Member/css/main.css')?>">
 
- 
+ <link rel="stylesheet" href="<?php echo base_url('assets/Member/css/home.css')?>">
 
   <title>Mikielina</title>  
+
+  
 
 
 
 </head>
 
-<body>
+<body style="background-color: gray;">
 
  <!-- Add your content of header -->
 <header>
@@ -41,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="./index.html" title="">
-          <img src="./assets/images/mashuptemplate.svg" class="navbar-logo-img" alt="">
+          <img src="./assets/Member/images/bank.jpg" class="navbar-logo-img" alt="">
         </a>
       </div>
 
@@ -64,11 +66,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
   </nav>
 </header>
-<div class="white-text-container background-image-container" style="background-image: url('images\fahm.jpg')">
-    <!--div class="opacity"></div-->
+<div class="white-text-container background-image-container dashboard-block"  >
+   
+<!--div class="opacity"></div-->
     <div class="container">
         <div class="row">
-           
             <div class="col-md-6">
                 <h1>Mikielina Family Investment Group</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -81,8 +83,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 </div>
 
-<div class="section-container border-section-container">
-    <div class="container">
+<div class="section-container border-section-container benefits-container ">
+    <div class="container ">
             <div class="row">
                 <div class="col-md-12 section-container-spacer">
                     <div class="text-center">
@@ -92,7 +94,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 benefits-block">
                     <div class="fa-container">
                         <i class="fa fa-comment-o fa-3x" aria-hidden="true"></i>
                     </div>
@@ -105,7 +107,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             Turpis egestas pretium aenean pharetra magna ac.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 benefits-block">
                     <div class="fa-container">
                         <i class="fa fa-heart-o fa-3x" aria-hidden="true"></i>
                     </div>
@@ -119,7 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4  benefits-block">
                     <div class="fa-container">
                         <i class="fa fa-bell-o fa-3x" aria-hidden="true"></i>
                     </div>

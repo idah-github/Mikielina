@@ -42,15 +42,8 @@ Class Signup extends CI_Controller{
              'required' =>'you have not provided %s.',
          ));
 
-         $this->form_validation->set_rules('member_age', 'age', 'required|<min_age 18="18years"></min_age>',
-         array( 
-             'min_age' => 'This field should be 2 digits ',
-            'max_age' => 'This field should be 2 digits ',
-             'required' =>'you have not provided %s.',
-         ));
-
-
-
+         $this->form_validation->set_rules('age', 'Age', 'trim|required||callback_validate_age');
+        //  $this->form_validation->set_message('validate_age','Member is not valid!');
 
          $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[Member.Email]',
          array(
@@ -99,7 +92,7 @@ Class Signup extends CI_Controller{
              $family_name = strtolower($this->input->post('familyname'));
              $family_name = str_replace(' ', '', $family_name);
              $member_email = strtolower($this->input->post('email'));
-             $member_age = $this->input->post('member_age');
+             $member_age = $this->input->post('age');
             $phone_number = $this->input->post('phone_number');
              $password = $this->input->post('password');
              $member_password = password_hash($this->input->post('password'), PASSWORD_BCRYPT);
@@ -129,6 +122,7 @@ Class Signup extends CI_Controller{
                  'No' => $member_id,
                  'Username' => $member_name,
                  'FamilyName' => $family_name,
+                 'Age'=>$member_age,
                  'Email' => $member_email,
                  'PhoneNumber' => $phone_number,
                  'Password' => $member_password,
@@ -150,6 +144,7 @@ Class Signup extends CI_Controller{
              $session_data = array(
                  'Session_Id' => $session_id,
                  'Username' => $member_name,
+                 'Age' =>$member_age,
                  'FamilyName' => $family_name,
                  "PhoneNumber"  => $phone_number,
                  "User_Id"   => $member_id,
@@ -172,10 +167,6 @@ Class Signup extends CI_Controller{
              }
         }
 
-
-
-
-
      }
      public function test_mail(){
          $mail_to = "guantaiidah@gmail.com";
@@ -191,6 +182,10 @@ Class Signup extends CI_Controller{
 
             
      }
+     
+     public function validate_age($member_age){
+
+    }
 
      public function verify_mail($recipient_name, $token){
          // check if username is saved in db
@@ -202,8 +197,9 @@ Class Signup extends CI_Controller{
 
              $session_data = array(
                  'Username' => $result['Username'],
-                 'Familyname' => $result['Familyname'],
+                 'FamilyName' => $result['FamilyName'],
                  'Email' => $result['Email'],
+                 'Age' => $result['Age'],
                 'User_Id' => $result['No'],
                  'Contact' => $result['PhoneNumber'],
                  'Pp' => $result['Profile_Picture']
@@ -230,6 +226,7 @@ Class Signup extends CI_Controller{
        return redirect('Member/Login');
 
      }
+
 
  }
 }

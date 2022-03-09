@@ -33,14 +33,15 @@ form {
    font-size: larger;
 }
 .form-container{
-    background-color: black;
+    /* background-color: black; */
+    background-image: url(../images/div.jpg);
 
 }
 .col-gender{
     align-content: flex-start;
     align-self: left;
 }
-.row g-3 {
+.row .g-3 {
     text-align: center;
     width: 20px;
     height: 30px;
@@ -51,7 +52,7 @@ form {
     opacity: 1;
     height:99vh;
     margin: auto;
-    background-color: black;
+    background-image: url(../images/div.jpg);
 }
 label {
     display: inline-block;

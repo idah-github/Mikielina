@@ -24,3 +24,19 @@ p{
 .image-responsive{
     align-items: center;
 }
+
+
+.dashboard-block{
+    background-image: url('../images/bank.jpg') !important;
+}
+
+.benefits-container{
+    background-color:#fff ;
+}
+
+.benefits-block{
+background-color: #fff;    
+}
+.benefits-block .fa-container i{
+    color:#0000ff
+}
