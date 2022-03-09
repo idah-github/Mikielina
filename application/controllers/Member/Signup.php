@@ -42,10 +42,6 @@ Class Signup extends CI_Controller{
              'required' =>'you have not provided %s.',
          ));
 
-<<<<<<< HEAD
-         $this->form_validation->set_rules('age', 'Age', 'trim|required||callback_validate_age');
-        //  $this->form_validation->set_message('validate_age','Member is not valid!');
-=======
          $this->form_validation->set_rules('age', 'age', 'required|callback_validate_age',
          array( 
 
@@ -57,7 +53,6 @@ Class Signup extends CI_Controller{
 
 
 
->>>>>>> bc378d6e20a648ef72c662f32a563a7c0f37f955
 
          $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[Member.Email]',
          array(
@@ -136,11 +131,7 @@ Class Signup extends CI_Controller{
                  'No' => $member_id,
                  'Username' => $member_name,
                  'FamilyName' => $family_name,
-<<<<<<< HEAD
                  'Age'=>$member_age,
-=======
-                 'Age' => $member_age,
->>>>>>> bc378d6e20a648ef72c662f32a563a7c0f37f955
                  'Email' => $member_email,
                  'PhoneNumber' => $phone_number,
                  'Password' => $member_password,
@@ -212,9 +203,7 @@ Class Signup extends CI_Controller{
             
      }
      
-     public function validate_age($member_age){
-
-    }
+ 
 
      public function verify_mail($recipient_name, $token){
          // check if username is saved in db
