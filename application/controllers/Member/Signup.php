@@ -29,7 +29,7 @@ Class Signup extends CI_Controller{
              'is_unique' => 'This %s already exists.'
          ));
 
-         $this->form_validation->set_rules('username', 'Familyname', 'required|is_unique[Member.Familyname]',
+         $this->form_validation->set_rules('familyname', 'Familyname', 'required|is_unique[Member.Familyname]',
          array( 
              'required' =>'you have not provided %s.',
              'is_unique' => 'This %s already exists.'
@@ -42,12 +42,14 @@ Class Signup extends CI_Controller{
              'required' =>'you have not provided %s.',
          ));
 
-         $this->form_validation->set_rules('member_age', 'age', 'required|<min_age 18="18years"></min_age>',
+         $this->form_validation->set_rules('age', 'age', 'required|callback_validate_age',
          array( 
-             'min_age' => 'This field should be 2 digits ',
-            'max_age' => 'This field should be 2 digits ',
+
              'required' =>'you have not provided %s.',
+             
          ));
+
+        $this->form_validation->set_message('validate_age', "Should be 18 and above");
 
 
 
@@ -99,7 +101,7 @@ Class Signup extends CI_Controller{
              $family_name = strtolower($this->input->post('familyname'));
              $family_name = str_replace(' ', '', $family_name);
              $member_email = strtolower($this->input->post('email'));
-             $member_age = $this->input->post('member_age');
+             $member_age = $this->input->post('age');
             $phone_number = $this->input->post('phone_number');
              $password = $this->input->post('password');
              $member_password = password_hash($this->input->post('password'), PASSWORD_BCRYPT);
@@ -129,6 +131,7 @@ Class Signup extends CI_Controller{
                  'No' => $member_id,
                  'Username' => $member_name,
                  'FamilyName' => $family_name,
+                 'Age' => $member_age,
                  'Email' => $member_email,
                  'PhoneNumber' => $phone_number,
                  'Password' => $member_password,
@@ -160,12 +163,13 @@ Class Signup extends CI_Controller{
 
 
             if( $this->Signup_Model->save_data($member_data)){
+                $this->session->set_userdata($session_data);
+
                  $this->session->set_flashdata('success'," Your account was created successfully");
                  redirect('Member/Home');
              }
              else{
 
-                 $this->session->set_userdata($session_data);
                 $this->session->set_flashdata('success'," Your account was created successfully");
                  return redirect(site_url('Member/Signup'));
 
@@ -176,6 +180,16 @@ Class Signup extends CI_Controller{
 
 
 
+     }
+
+
+     public function validate_age($age){
+         if ($age< 18){
+             return false;
+         }
+         else{
+             return true;
+         }
      }
      public function test_mail(){
          $mail_to = "guantaiidah@gmail.com";
