@@ -29,7 +29,7 @@ Class Signup extends CI_Controller{
              'is_unique' => 'This %s already exists.'
          ));
 
-         $this->form_validation->set_rules('username', 'Familyname', 'required|is_unique[Member.Familyname]',
+         $this->form_validation->set_rules('familyname', 'Familyname', 'required|is_unique[Member.Familyname]',
          array( 
              'required' =>'you have not provided %s.',
              'is_unique' => 'This %s already exists.'
@@ -42,8 +42,22 @@ Class Signup extends CI_Controller{
              'required' =>'you have not provided %s.',
          ));
 
+<<<<<<< HEAD
          $this->form_validation->set_rules('age', 'Age', 'trim|required||callback_validate_age');
         //  $this->form_validation->set_message('validate_age','Member is not valid!');
+=======
+         $this->form_validation->set_rules('age', 'age', 'required|callback_validate_age',
+         array( 
+
+             'required' =>'you have not provided %s.',
+             
+         ));
+
+        $this->form_validation->set_message('validate_age', "Should be 18 and above");
+
+
+
+>>>>>>> bc378d6e20a648ef72c662f32a563a7c0f37f955
 
          $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[Member.Email]',
          array(
@@ -122,7 +136,11 @@ Class Signup extends CI_Controller{
                  'No' => $member_id,
                  'Username' => $member_name,
                  'FamilyName' => $family_name,
+<<<<<<< HEAD
                  'Age'=>$member_age,
+=======
+                 'Age' => $member_age,
+>>>>>>> bc378d6e20a648ef72c662f32a563a7c0f37f955
                  'Email' => $member_email,
                  'PhoneNumber' => $phone_number,
                  'Password' => $member_password,
@@ -155,18 +173,29 @@ Class Signup extends CI_Controller{
 
 
             if( $this->Signup_Model->save_data($member_data)){
+                $this->session->set_userdata($session_data);
+
                  $this->session->set_flashdata('success'," Your account was created successfully");
                  redirect('Member/Home');
              }
              else{
 
-                 $this->session->set_userdata($session_data);
                 $this->session->set_flashdata('success'," Your account was created successfully");
                  return redirect(site_url('Member/Signup'));
 
              }
         }
 
+     }
+
+
+     public function validate_age($age){
+         if ($age< 18){
+             return false;
+         }
+         else{
+             return true;
+         }
      }
      public function test_mail(){
          $mail_to = "guantaiidah@gmail.com";
