@@ -4,20 +4,15 @@ body{
     background-size: cover;
     position: absolute;
     background-color: rgb(239, 239, 243);
-    
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
 
 }
-head{
+.head{
     text-align: right;
-    /* background-color: rgb(122, 122, 110);
-    color: #495057; */
+    display: flex;
 }
 
 h6{
     text-align: center;
-    font-size: 40px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bolder;
     text-underline-position: below;
@@ -26,21 +21,34 @@ button{
     color: aquamarine;
     position: absolute;
 }
+.dishes{
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    margin: auto !important;
+box-sizing: border-box;
+    justify-content: space-around;
+    background-color: #e8ebee;
 
+}
+.form-block{
+    display: inline-flex;
+    flex: 1;
+    margin: 4px;
+    /* background-color: #e8ebee; */
+
+}
 form {
-    width: 700px;
+    /* width: 700px; */
     height: 100%;
     /* color: rgb(236, 240, 239); */
     opacity: 1;
-   padding: 20px;
    align-content: center;
    text-align: center;
    /* background-color: rgb(241, 241, 245); */
-   font-size: larger;
+   font-size: 12pt;
 }
-/* .col{
-  background-image: url(../images/dark.jpg);
-} */
+
 .col-gender{
     align-content: flex-start;
     align-self: left;
@@ -50,7 +58,6 @@ form {
     width: 20px;
     height: 30px;
     filter: none;
-    width: 35vw;
     border-radius: 7%;
     position: relative;
     opacity: 1;

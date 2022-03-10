@@ -42,9 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="./index.html" title="">
-          <img src="./assets/Member/images/bank.jpg" class="navbar-logo-img" alt="">
-        </a>
+
       </div>
 
       <div class="collapse navbar-collapse" id="navbar-collapse-uarr">
@@ -145,82 +143,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 </div>
 
-<!-- <div class="section-container">
-    <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-
-
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img class="img-responsive" src="./assets/images/save.jpg" alt="First slide">
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" src="./assets/images/home.jpg" alt="Second slide">
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" src="./assets/images/invest.jpg" alt="Third slide">
-                            </div>
-                        </div>
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                    </div>
-
-
-                </div>
-            </div>
-    </div>
-</div> -->
-
-
-<!-- <div class="section-container background-color-container white-text-container">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="text-center">
-                    <h2></h2>
-                    <p> Auctor augue mauris augue neque. Posuere lorem ipsum dolor sit amet consectetur adipiscing. Porta non
-                        pulvinar neque laoreet. Viverra ipsum nunc aliquet bibendum. Iaculis urna id volutpat lacus. Turpis
-                        egestas pretium aenean pharetra magna ac. Id cursus metus aliquam eleifend mi. </p>
-                    <a href="login.html" title="" class="btn btn-primary btn-lg">Join Now</a>
-                </div>
-            </div>
-        </div>
-     </div>
- </div> -->
-
- <!--div class="section-container">
-    <div class="container">
-        <div class="row">                   
-            <div class="col-md-7">
-                <img class="img-responsive" src="./assets/images/img-06.png" alt="">
-            </div>
-
-            <div class="col-md-5">
-                <ul class="features">
-                    <li>
-                        <h3>Dui augue</h3>
-                        <p>Auctor augue mauris augue neque. Posuere lorem ipsum dolor sit amet consectetur adipiscing.
-                        </p>
-                    </li>
-                    <li>
-                        <h3>Malesuada</h3>
-                        <p>Auctor augue mauris augue neque. Posuere lorem ipsum dolor sit amet consectetur adipiscing.
-                        </p>
-                    </li>
-                    <li>
-                        <h3>Bibendum</h3>
-                        <p>Auctor augue mauris augue neque. Posuere lorem ipsum dolor sit amet consectetur adipiscing.
-                        </p>
-                    </li>
-                </ul>
-            </div-->
-        
 
               
             <div class="row">
@@ -245,49 +167,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-<!-- <footer>
-    <div class="section-container footer-container">
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-4">
-                        <h4>About us</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet consectetur dolor</p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h4>!</h4>
-                        <p>
-                            <a href="https://facebook.com/" class="social-round-icon white-round-icon fa-icon" title="">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                          </a>
-                          <a href="https://twitter.com/" class="social-round-icon white-round-icon fa-icon" title="">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                          </a>
-                          <a href="https://www.linkedin.com/" class="social-round-icon white-round-icon fa-icon" title="">
-                            <i class="fa fa-linkedin" aria-hidden="true"></i>
-                          </a>
-                        </p>
-                        <p><small> | Website created by <a href="http://www.mashup-template.com/" class="link-like-text" title="Create website with free html template"></a>Idah<a href="http://www.unsplash.com/" class="link-like-text" title="Beautiful Free Images">Guantai</a></small></p> 
-                    </div>
-
-                    <div class="col-md-4">
-                        <h4>Join</h4>
-                        
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input type="text" class="form-control footer-input-text">
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-primary btn-newsletter ">OK</button>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-            </div>
-        </div>
-    </div>
-</footer> -->
 
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {
@@ -295,20 +174,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   });
 </script>
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
 
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-XXXXX-X', 'auto');
-  ga('send', 'pageview');
-</script>
-
--->
 
 <script type="text/javascript" src="./main.41beeca9.js"></script>
 </body>

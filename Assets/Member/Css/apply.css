@@ -1,20 +1,26 @@
-
+h5{
+    align-items: center;
+    height:100%; width:1500px;  background-color:white;
+    text-align: center;
+}
 form{
-    width: 900px;
+    
+    width: 500px;
     height: 50%;
     color: aquamarine;
     opacity: 1;
    padding: 20px;
    align-content: center;
    text-align: center;
-   margin: 4px;
+   margin: 4px auto;
+
    border-color: black;
    font-size: larger;
 }
 .card{
     
-    background-color: rgb(214, 214, 231);
-    background-image: url(../images/kids.jpg);
+    
+    background-image: url(../images/dark.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 } 
@@ -28,7 +34,7 @@ form{
    
 } */
 label{
-    color: rgb(2, 6, 29);
+    color: rgb(204, 208, 235);
     font-size: medium;
     font-weight: bolder;
 }

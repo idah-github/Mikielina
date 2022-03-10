@@ -18,12 +18,19 @@ Class Dashboard extends CI_Controller{
 
     }
     public function index(){
+        if(empty($_SESSION['username'])){
+            return redirect(site_url('Admin/Login'));
+        }
 
-        // $check_session = $this->session->userdata('admin_id');
-        
-        // if(empty($check_session)){
-        //     redirect('admin/Dashboard');
-        $this->load->view('Admin/Dashboard');
+
+        $query = $this->db->get('application');
+        $loans = $query->result_array();
+        $data = array(
+            'loans' => $loans
+        );
+
+        $this->load->view('Admin/Dashboard', $data);
     }
 
+    
 }

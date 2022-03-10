@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="card">
 
 
- <h5  style=" height:100%; width:1000px;  background-color:white; ">
+ <h5>
       <strong>LOAN FORM</strong>
   </h5>
   <!--Card content-->

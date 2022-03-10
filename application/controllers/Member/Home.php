@@ -19,9 +19,7 @@ Class Home extends CI_Controller{
     }
     public function index(){
 
-        $data = array(
-            'username' => "Hello World"
-        );
-        $this->load->view('Member/Home', $data);
+
+        $this->load->view('Member/Home');
     }
 }
