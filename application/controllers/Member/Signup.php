@@ -43,11 +43,17 @@ Class Signup extends CI_Controller{
          ));
 
          $this->form_validation->set_rules('age', 'age', 'required|callback_validate_age',
-        array(
-            'required'=>'age is not valid',
-            'callback_validate_age'=>'age invalid',
-        ));
-         $this->form_validation->set_message('validate_age','Age is not valid!');
+         array( 
+
+             'required' =>'you have not provided %s.',
+             'callback_validate_age' => "Age is not valid" 
+             
+         ));
+
+        $this->form_validation->set_message('validate_age', "Should be 18 and above");
+
+
+
 
          $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[Member.Email]',
          array(
@@ -175,7 +181,7 @@ Class Signup extends CI_Controller{
      }
 
 
-     public function validate_age($age){
+     public function validate_age($age){git
          if ($age< 18){
              return false;
          }

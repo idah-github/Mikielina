@@ -24,13 +24,12 @@ Class Login extends CI_Controller{
     public function login_admin(){
 
         $username = strtolower($this->input->post('username'));
-        $accesscode = $this->input->post('accesscode');
         $password = $this->input->post('password');
 
-        $result = $this->Login_Model->check_login($username, $accesscode, $password);
+        $result = $this->Login_Model->check_login($username, $password);
 
         if($result == true){
-            redirect('Member/Home');
+            return redirect(site_url('Admin/Dashboard'));
         }
         else{
             $this->session->set_flashdata('error', "Invalid username or password. Try again");
@@ -40,7 +39,7 @@ Class Login extends CI_Controller{
 
     }
 
-    public function logout(){
+    public function logout_user(){
         $this->session->sess_destroy();
         $this->load->view('Admin/login');
 
