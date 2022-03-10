@@ -11,7 +11,7 @@ Class Login_Model extends CI_Model{
       // fetch by username first
       $this->db->where('Username', $username);
 
-      $query = $this->db->get('admin');
+      $query = $this->db->get('member');
       $result = $query->row_array(); // get the row first
       
       if (!empty($result)) {

@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <ul class="nav navbar-nav navbar-right">
           <li> <a href="<?php echo site_url('Member/Index')?>" class=" active"> <i class="fa fa-fw fa-home"></i> Home </a></li>
           <li><a href="<?php echo site_url('Member/Home')?>" title=""> About</a></li>
-            <?php if(isset($_SESSION['Username'])):?>
+            <?php if(isset($_SESSION['username'])):?>
                 <li><a href="<?php echo site_url('Member/Application')?>" title="">Application</a></li>
                 <li><a href="<?php echo site_url('Member/Contact')?>" title=""><i class="fa fa-fw fa-envelope"></i>Contact</a></li>
                 <li><a href="<?php echo site_url('Member/Loan')?>" title="">Loan</a></li>

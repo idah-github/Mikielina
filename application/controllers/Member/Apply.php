@@ -53,21 +53,7 @@ Class Apply extends CI_Controller{
 
         // $date=$this->input->post('date');
 
-        $this->db->set('UserName',$username);
-         $this->db->set('G_Name',$gname);
-        $this->db->set('G_Address',$gaddress);
-        $this->db->set('G_Email',$gemail);       
-        // $this->db->set('Gender',$gender);      
-         $this->db->set('Amount',$amount);
-        $this->db->set('Address',$address);  
-        $this->db->set('Income', $gincome);
-        $this->db->set('Reason',$description);
-        
-        // $this->db->set('Amount',$balance);
-         $this->db->set('LoanStatus', 1);
-        //$this->db->where('Member_Id', $_SESSION['Member_Id']);     
-        // $this->db->set('Town',$town);
-        //$this->db->update('Member');
+
 
         $id= RAND(100000,99999999);
              $query = $this->db->get_where('Application', array('No',$id));
@@ -95,11 +81,10 @@ Class Apply extends CI_Controller{
                'G_Name'=>$gname,
                'G_Address'=> $gaddress,
                'G_Email' => $gemail,
-            //    'Gender' => $gender,
                 'Amount'=> $amount,
-               'Address' => $address
+               'Address' => $address,
+               'Status' => 1
 
-                //  'Session_Id' => $session_id,
 
                 
              );
