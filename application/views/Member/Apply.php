@@ -6,8 +6,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <head>
   <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
 
-    <!-- <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css')?>">  
-   <link rel="stylesheet" href="<?php echo base_url('assets/Member/css/signup.css')?>"> -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css')?>">  
+   <link rel="stylesheet" href="<?php echo base_url('assets/Member/css/signup.css')?>"> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
@@ -15,43 +15,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo base_url('assets/Member/css/apply.css');?>"> 
   </head>
-<body style="background-color: whitesmoke;">
-<header>
-  <nav class="navbar  navbar-fixed-top navbar-default">
-    <div class="container">
-      
-
-      <div class="collapse navbar-collapse" id="navbar-collapse-uarr">
-        <ul class="nav navbar-nav navbar-right">
-          <li> <a href="<?php echo site_url('Member/Index')?>" class=" active"> <i class="fa fa-fw fa-home"></i> Home </a></li>
-          <li><a href="<?php echo site_url('Member/Home')?>" title=""> About</a></li>
-          <li><a href="<?php echo site_url('Member/Application')?>" title="">Application</a></li>
-          <li><a href="<?php echo site_url('Member/Contact')?>" title="">Contact</a></li>
-          <li><a href="<?php echo site_url('Member/Loan')?>" title="">Loan</a></li>
-          <li><a href="<?php echo site_url('Member/Login')?>" title=""> <i class="fa fa-fw fa-user"></i> Login</a></li>
-          <li>
-            <p>
-              <a href="<?php echo site_url('Member/Loan')?>" class="btn btn-primary navbar-btn" title="">Apply Now</a>
-            </p>
-          </li>
-          
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
-
-
+<body>
 <?php if($v_info['LoanStatus'] == 0):?>
                         <!-- content to be displayed to a new user or when the user account has been deactivated -->
                         <div class="loan-form">
-                            <h4> Welcome <?php echo ucfirst($_SESSION['username'])?>,</h4>
+                             <!-- <?php echo ucfirst($_SESSION['username'])?> -->
                             
 <div class="card">
 
 
-<h5  style="background-color: grey; height:100%; width:1000px">
+ <h5  style=" height:100%; width:1000px;  background-color:white; ">
       <strong>LOAN FORM</strong>
   </h5>
   <!--Card content-->

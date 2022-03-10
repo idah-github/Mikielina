@@ -18,7 +18,7 @@ p{
     display: block;
     font-size: 15px;
     line-height: 1.81;
-    color: #555;
+    color: rgb(236, 231, 231);
     -webkit-tap-highlight-color: blanchedalmond;
 }
 .image-responsive{

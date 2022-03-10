@@ -65,34 +65,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
   </nav>
 </header> -->
-<h6 class="text-center" style="color:black; font-size:larger; font:bolder;">  Update profile </h6>
-<div class="form-container"> 
-  <form class="row g-3" action="<?php echo site_url('Member/Apply/approve_application')?>" method="POST" >
-  <div class="mb-3">
+<div class="head"> 
+  
+<h6 class="text-center" style="color:black; font-size:larger; font:bolder; ">  Update profile </h6>
+</div>
+       
+<div class="row mt-5" >
+                <div class="col" style="background-image: url('assets/Member/images/dark.jpg');" >
+                   <p> </p>
+                </div>
+  <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center order-1 order-md-2 py-5" >
+                    <h2 class="special-number"></h2>
+  <div class="dishes-text">
+   <form class="row g-3" action="<?php echo site_url('Member/Apply/approve_application')?>" method="POST" >
+   <div class="mb-3">
      <label for="exampleInputEmail1" class="form-label"> UserName</label>
         <input type="text" class="form-control" required name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
-    <!-- <div class="mb-3">
-       <label for="exampleInputEmail1" class="form-label"> MiddleName</label>
-          <input type="text" class="form-control" required name="middlename" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-
-    
-    <div class="mb-3">
-       <label for="exampleInputEmail1" class="form-label"> FamilyName</label>
-          <input type="text" class="form-control" required name="familyname" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div> -->
-    <!-- <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">EmailAddres</label>
-      <input type="email" class="form-control" name="email" id="inputEmail4">
-    </div> -->
-
-    
+   
     
     <div class="col-6">
-      <label for="inputAddress" class="form-label">Account Balance</label>
-      <input type="text" class="form-control"  name="balance" id="inputAge" >
+      <label for="inputAddress2" class="form-label">Address</label>
+      <input type="text" class="form-control" id="inputAddress" name="address" placeholder="Apartment, studio, or floor">
     </div>
+
     <div class="col-gender">
       <label for="inputState" class="form-label">Marital Status</label>
       <select class="form-select" name="status" aria-label="Default select example" >
@@ -112,22 +108,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <option value="3">Other</option>
       </select>
     </div>
-    <div class="col-6">
-      <label for="inputAddress2" class="form-label">Address</label>
-      <input type="text" class="form-control" id="inputAddress" name="address" placeholder="Apartment, studio, or floor">
-    </div>
   
       <br><br><br>
     <div class="col-12">
       <button type="submit" class="btn btn-primary" value="send" >Submit</button>
 
   </form>
-  
-</div>                   
+                       
+                   
+  </div>
+  </div>
+ </div>           
  
                         <!-- start of content to be displayed for some vendor waiting for approval from the administrator -->
     <!-- <div class="pending-message">
-        <h4> Hello <?php echo $_SESSION['familyname']?></h4>
+        <h4> Hello <?php echo $_SESSION['username']?></h4>
           <p>
             Hello your application was sent successfully. Wait for the admin to approve your account to start selling. If this takes longer than 72 hours contact admin via the email <b> support@cartlite.co.ke</b> 
             </p>
@@ -135,20 +130,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- end of this section -->
                        
 
-<div class="approved-member">
-  <div class="welcome-member"> <h6 class="h6">  <!--?php echo ucfirst($_SESSION['username'])?--></h6> 
+  <div class="approved-member">
+    <div class="welcome-member"> <h6 class="h6">  <!--?php echo ucfirst($_SESSION['username'])?--></h6> 
+    </div>
   </div>
-</div>
-<!-- <footer>
-   
-</footer> -->
 
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-    navActivePage();
-  });
-</script>
-<script type="text/javascript" src="./main.41beeca9.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      navActivePage();
+    });
+  </script>
+  <script type="text/javascript" src="./main.41beeca9.js"></script>
 </body>
 
 </html>

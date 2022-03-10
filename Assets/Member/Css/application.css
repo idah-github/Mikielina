@@ -1,20 +1,26 @@
 body{
- 
+    background-image: url(../images/dark.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
     background-color: rgb(239, 239, 243);
     
     /* background-repeat: no-repeat; */
     /* background-size: cover; */
 
 }
-header{
+head{
     text-align: right;
-    background-color: beige;
+    /* background-color: rgb(122, 122, 110);
+    color: #495057; */
 }
+
 h6{
     text-align: center;
     font-size: 40px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bolder;
+    text-underline-position: below;
 }
 button{
     color: aquamarine;
@@ -24,19 +30,17 @@ button{
 form {
     width: 700px;
     height: 100%;
-    color: aquamarine;
+    /* color: rgb(236, 240, 239); */
     opacity: 1;
    padding: 20px;
    align-content: center;
    text-align: center;
-   background-color: rgb(161, 154, 154);
+   /* background-color: rgb(241, 241, 245); */
    font-size: larger;
 }
-.form-container{
-    /* background-color: black; */
-    background-image: url(../images/div.jpg);
-
-}
+/* .col{
+  background-image: url(../images/dark.jpg);
+} */
 .col-gender{
     align-content: flex-start;
     align-self: left;
@@ -52,7 +56,7 @@ form {
     opacity: 1;
     height:99vh;
     margin: auto;
-    background-image: url(../images/div.jpg);
+    /* background-image: url(../images/div.jpg); */
 }
 label {
     display: inline-block;
@@ -71,9 +75,9 @@ padding: 0.375rem 0.75rem;
 font-size: 1rem;
 font-weight: 400;
 line-height: 1.5;
-color: #495057;
+color: #f6f7f8;
 background-clip: padding-box;
-border: 1px solid #ced4da;
+border: 1px solid #e8ebee;
 border-radius: 0.25rem;
 -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
@@ -153,5 +157,10 @@ transform: translate(-50%, -75%) rotate(0deg);
 100% {
 transform: translate(-50%, -75%) rotate(360deg);
 }
+}
+.card{ color: #a7abaf;
+}
+.row{
+    color: #94acc4;
 }
 
