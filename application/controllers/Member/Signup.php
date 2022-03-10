@@ -42,22 +42,12 @@ Class Signup extends CI_Controller{
              'required' =>'you have not provided %s.',
          ));
 
-<<<<<<< HEAD
-         $this->form_validation->set_rules('age', 'Age', 'trim|required||callback_validate_age');
-        //  $this->form_validation->set_message('validate_age','Member is not valid!');
-=======
          $this->form_validation->set_rules('age', 'age', 'required|callback_validate_age',
-         array( 
-
-             'required' =>'you have not provided %s.',
-             
-         ));
-
-        $this->form_validation->set_message('validate_age', "Should be 18 and above");
-
-
-
->>>>>>> bc378d6e20a648ef72c662f32a563a7c0f37f955
+        array(
+            'required'=>'age is not valid',
+            'callback_validate_age'=>'age invalid',
+        ));
+         $this->form_validation->set_message('validate_age','Age is not valid!');
 
          $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[Member.Email]',
          array(
@@ -136,11 +126,7 @@ Class Signup extends CI_Controller{
                  'No' => $member_id,
                  'Username' => $member_name,
                  'FamilyName' => $family_name,
-<<<<<<< HEAD
                  'Age'=>$member_age,
-=======
-                 'Age' => $member_age,
->>>>>>> bc378d6e20a648ef72c662f32a563a7c0f37f955
                  'Email' => $member_email,
                  'PhoneNumber' => $phone_number,
                  'Password' => $member_password,
@@ -212,9 +198,7 @@ Class Signup extends CI_Controller{
             
      }
      
-     public function validate_age($member_age){
-
-    }
+     
 
      public function verify_mail($recipient_name, $token){
          // check if username is saved in db
@@ -258,4 +242,222 @@ Class Signup extends CI_Controller{
 
 
  }
+public function updateprofile(){
+                
+        $files = $_FILES;
+
+              
+              // File upload configuration
+
+              $config['overwrite']     = TRUE;
+              $config['remove_spaces'] = TRUE;
+
+        $this->load->library('upload',$config);
+        $images = array();
+        
+
+  
+        $title = $this->input->post('product_name');
+        $description = $this->input->post('description');
+        
+        $colors = $this->input->post('colors');
+        $gender = $this->input->post('gender');
+        $product_group = $this->input->post('product-group');
+        $colors = implode(',', (array)$colors);
+        $sizes = $this->input->post('sizes');
+        $sizes = implode(',',(array) $sizes);
+        $discount = $this->input->post('discount');
+        $unit_price = $this->input->post('unit_price');
+        $available_units =$this->input->post('available_units');
+        $category = $this->input->post('category');
+        $vendor_id = $_SESSION['vendor_id'];
+       
+        $imgCount = count($_FILES['userfile']['name']);
+
+        for ($i=0; $i<$imgCount; $i++){
+            
+
+              $_FILES['file']['name']= $files['userfile']['name'][$i];
+              $_FILES['file']['type']= $files['userfile']['type'][$i];
+              $_FILES['file']['tmp_name']= $files['userfile']['tmp_name'][$i];
+              $_FILES['file']['error']= $files['userfile']['error'][$i];
+              $_FILES['file']['size']= $files['userfile']['size'][$i]; 
+
+
+              $filename = $_FILES['file']['name'];
+              //Load upload library
+              $this->upload->initialize($config);
+              
+              // action block
+              if(!empty($filename)){
+                    if ($this->upload->do_upload('file'))
+                    {
+
+                        $fileData = $this->upload->data();
+                        $image_name = "https://www.cartlite.co.ke/uploads/products/".$fileData['file_name']; 
+                        array_push($images, $image_name);
+                    }
+                    else{
+                        $error = array('error' => $this->upload->display_errors());
+                        foreach($error as $err){
+                            
+                        $this->session->set_flashdata('error', $err);
+                            
+                        }
+
+                        redirect('vendors/Uploads');
+                        
+                    }
+   
+                 }
+                 else{
+                        $images[$i] =" ";
+                 }
+        }
+        if (!empty($_SESSION['vendor_id'])){
+        
+        $date   = new DateTime(); //this returns the current date time
+        $result = $date->format('Y-m-d-H-i-s');
+        $posted_at = $result;
+        
+        $product_id =  uniqid();
+
+        $product_data = array(
+            'Product_Id' =>  $product_id,   
+            'Product_Name' => $title,
+            'Unit_Price' => $unit_price,
+            'Product_Group' => $product_group,
+            'Vendor_Id' => $vendor_id,
+            'Gender' =>$gender,
+            'Available_Units' => $available_units,
+            'Description' => $description,
+            'Available_Colors' => $colors,
+            'Primary_Image' => $images[0],
+            'Second_Image' =>$images[1],
+            'Third_Image' => $images[2],
+            'Available_Size' =>  $sizes,
+            'Discount_Percentage' => $discount,
+            'Category_Id' => $category,
+            'Likes' =>0,
+            'Date_Posted' => $posted_at
+        );
+                  
+                $this->load->model('vendors/Upload_Model');
+
+
+                  if ($this->Upload_Model->save_product($product_data)) {
+                      # if successful,  redirect to reason code screen...
+                      $this->session->set_flashdata('success', 'Your post has been successfully updated');
+
+                      redirect(site_url('vendors/Uploads'));
+                  } else {
+                      $error = array('error' => $this->upload->display_errors());
+                            $this->session->set_flashdata('error', "something went wrong while uploading the document. Try again");
+                        redirect(site_url('vendors/Uploads'));                      
+                  }             
+            }
+            else {
+            $this->session->set_flashdata("success", "need to sign in");
+           redirect(site_url("vendors/Index"));
+
+        }
+    }
+
+        public function approve_vendor(){
+            $legal_name = $this->input->post('legal_name');
+            $id_no = $this->input->post('id_no');
+            $business_description = $this->input->post('business_description');
+            $gender = $this->input->post('gender');
+            $location = $this->input->post('location');
+
+            $this->db->set('Legal_Name', $legal_name);
+            $this->db->set('Location', $location);
+            $this->db->set('Id_no', $id_no);
+            $this->db->set('Vendor_Approved', 1);
+            $this->db->set('Business_Description', $business_description);
+            $this->db->where('Vendor_Id', $_SESSION['vendor_id']);
+            $this->db->update('Vendors');
+
+            $this->session->set_flashdata('success', "Your application has been received and you will receive a feedback shortly");
+            redirect(site_url('vendors/Uploads'));
+        }
+
+
+        public function show_products(){
+            if(empty($_SESSION['Session_Id'])){
+
+                return redirect(site_url('vendors/Index'));
+            }
+            $vendor_id = $this->session->userdata('vendor_id');
+
+            $products = $this->Upload_Model->get_items($vendor_id);
+            $data = array(
+                'products'=> $products
+            );
+
+
+            $this->load->view('vendors/products', $data);
+        }
+
+        public function single_product($product_id){
+
+          $query =   $this->db->get_where('Products', array('product_id' => $product_id));
+            $product = $query->row_array();
+            
+            // code to calculate the number of sales for each product
+            $this->db->select('*');
+            $this->db->from('Sales');
+            
+            $this->db->where('Sales.Product_Id', $product_id);
+            $query = $this->db->get();
+            
+            $sales_re = $query->result_array();
+            
+            // create an empty variable sales 
+            
+            $sales = 0;
+            // add number of items sold for each sale
+            
+            foreach($sales_re as $sale){
+                $sales = $sales + $sale['Units_Sold'];
+            }
+            
+            $data = array(
+                'product' => $product,
+                'sales' => $sales
+            );
+            $this->load->view('vendors/edit_product', $data);
+
+        }
+
+        public function delete_product($product_id){
+
+
+            //  check that there are no orders relating to this product
+                $this->db->where('Product_Id', $product_id);
+                $this->db->where('Status', 1 );
+                $query = $this->db->get('Sales');
+
+                if($query->num_rows()>0){
+                    $this->session->set_flashdata('warning', "there is an order for this product under processing wait for the transactions to be completed before deleting it");
+
+                    return redirect(site_url('users/Uploads/show_products'));
+                }
+                else{
+
+                    // I am not sure about deleting a product just unpublish and hide from the vendor or something
+                    $this->db->where('Product_Id', $product_id);
+                    $this->db->delete('Products');
+                    $this->session->set_flashdata('success', "deletion was successfully completed");
+                    return redirect(site_url('users/Uploads/show_products/'));
+
+                    
+                }
+    
+           
+            
+        }
+
 }
+
+

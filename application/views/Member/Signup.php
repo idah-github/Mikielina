@@ -17,9 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url('assets/Member/css/signup.css');?>">
   </head>
   <body >
-  <?php
-            $this->load->view('common/flash_messages');
-          ?>
+  
     <div class="signup-container ">
         <div class="image-box bg-danger">
         <img src="<?php echo base_url('assets/Member/images/fahm.jpg')?>" alt="">

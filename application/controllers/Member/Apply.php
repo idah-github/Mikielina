@@ -20,36 +20,51 @@ Class Apply extends CI_Controller{
 
     }
     public function index(){
-        $this->load->view('Member/Apply');
-        if(empty($_SESSION['Session_Id'])){
-            // return redirect(site_url('Member/Index'));
+        // $this->load->view('Member/Apply');
+        if(empty($_SESSION['username'])){
+             return redirect(site_url('Member/Login'));
         }
 
-        $query = $this->db->get_where('Member', );
+        $query = $this->db->get_where('application', array('UserName' => $_SESSION['username']) );
+
         $v_info = $query->row_array();
 
+        $data = array(
+            'v_info' => $v_info
+        );
+
+        $this->load->view('Member/Apply',$data );
 
     
     }
 
-    public function approve_member(){
-        $firstname = $this->input->post('firstname');
-        $middlename = $this->input->post('middlename');
-        $familyname = $this->input->post('familyname');
-        $email= $this->input->post('email');
+    public function approve_application(){
+        $username = $this->input->post('username');
+         $gname = $this->input->post('gname');
+        //  $gname = $this->input->post('');
+        $gemail= $this->input->post('gemail');
         $gender = $this->input->post('gender');
-        $age = $this-> input->post('age');
+        $amount = $this-> input->post('amount');
         $address = $this->input->post('address');
-        // $town = $this->input->post('town');
+        $gincome =$this->input->post('income');
+        $gaddress = $this->input->post('gaddress');
+        $description=$this->input->post('reason');
+        
 
-        $this->db->set('FirstName',$firstname);
-        $this->db->set('middlename',$middlename);
-        $this->db->set('FamilyName',$familyname);
-        $this->db->set('Email',$email);       
-        $this->db->set('Gender',$gender);      
-        $this->db->set('Age',$age);
+        // $date=$this->input->post('date');
+
+        $this->db->set('UserName',$username);
+         $this->db->set('G_Name',$gname);
+        $this->db->set('G_Address',$gaddress);
+        $this->db->set('G_Email',$gemail);       
+        // $this->db->set('Gender',$gender);      
+         $this->db->set('Amount',$amount);
         $this->db->set('Address',$address);  
-        // $this->db->set('Member_Approved', 1);
+        $this->db->set('Income', $gincome);
+        $this->db->set('Reason',$description);
+        
+        // $this->db->set('Amount',$balance);
+         $this->db->set('LoanStatus', 1);
         //$this->db->where('Member_Id', $_SESSION['Member_Id']);     
         // $this->db->set('Town',$town);
         //$this->db->update('Member');
@@ -75,12 +90,13 @@ Class Apply extends CI_Controller{
            
              $member_data = array(
                'Id' =>$member_id,
-               'FirstName' => $firstname,
-            //    'MiddleName' => $middlename,
-               'FamilyName' => $familyname,
-               'Email' => $email,
-               'Gender' => $gender,
-               'Age'=> $age,
+               'UserName' => $username,
+               'Reason'=>$description,
+               'G_Name'=>$gname,
+               'G_Address'=> $gaddress,
+               'G_Email' => $gemail,
+            //    'Gender' => $gender,
+                'Amount'=> $amount,
                'Address' => $address
 
                 //  'Session_Id' => $session_id,

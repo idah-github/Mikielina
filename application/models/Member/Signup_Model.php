@@ -12,4 +12,15 @@ Class Signup_Model extends CI_Model{
 
         return true;
     }
+
+    public function  get_items($member_id){
+
+        $query = $this->db->get_where('Application', array('member_id' => $member_id));
+
+        $result = $query->result_array();
+
+
+        return $result;
+
+    }
 }

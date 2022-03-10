@@ -65,14 +65,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
   </nav>
 </header> -->
-<h6 class="text-center" style="color:black; font-size:larger; font:bolder;">  Membership Application Form </h6>
+<h6 class="text-center" style="color:black; font-size:larger; font:bolder;">  Update profile </h6>
 <div class="form-container"> 
-  <form class="row g-3" action="<?php echo site_url('Member/Apply/approve_member')?>" method="POST" >
+  <form class="row g-3" action="<?php echo site_url('Member/Apply/approve_application')?>" method="POST" >
   <div class="mb-3">
-     <label for="exampleInputEmail1" class="form-label"> FirstName</label>
-        <input type="text" class="form-control" required name="firstname" id="exampleInputEmail1" aria-describedby="emailHelp">
+     <label for="exampleInputEmail1" class="form-label"> UserName</label>
+        <input type="text" class="form-control" required name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
-    <div class="mb-3">
+    <!-- <div class="mb-3">
        <label for="exampleInputEmail1" class="form-label"> MiddleName</label>
           <input type="text" class="form-control" required name="middlename" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
@@ -81,22 +81,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="mb-3">
        <label for="exampleInputEmail1" class="form-label"> FamilyName</label>
           <input type="text" class="form-control" required name="familyname" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="col-md-6">
+    </div> -->
+    <!-- <div class="col-md-6">
       <label for="inputEmail4" class="form-label">EmailAddres</label>
       <input type="email" class="form-control" name="email" id="inputEmail4">
-    </div>
+    </div> -->
+
+    
     
     <div class="col-6">
-      <label for="inputAddress" class="form-label">Age</label>
-      <input type="text" class="form-control"  name="age" id="inputAge" >
+      <label for="inputAddress" class="form-label">Account Balance</label>
+      <input type="text" class="form-control"  name="balance" id="inputAge" >
     </div>
+    <div class="col-gender">
+      <label for="inputState" class="form-label">Marital Status</label>
+      <select class="form-select" name="status" aria-label="Default select example" >
+        <option selected>Choose one</option>
+        <option value="1">Married</option>
+        <option value="2">Single</option>
+        <option value="3">Separated</option>
+      </select>
+    </div>
+
     <div class="col-gender">
       <label for="inputState" class="form-label">Gender</label>
       <select class="form-select" name="gender" aria-label="Default select example" >
         <option selected>Choose one</option>
-        <option value="1">Male</option>
-        <option value="2">Female</option>
+        <option value="1">Female</option>
+        <option value="2">Male</option>
         <option value="3">Other</option>
       </select>
     </div>

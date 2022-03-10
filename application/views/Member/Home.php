@@ -84,7 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row">
                <div class="col-xs-12 col-md-8 col-md-offset-2">
                     <div class="text-center">
-                    <h1>Mikielina</h1>
+                    <h1></h1>
                      </div>   
                         <p class="section-container-spacer">Auctor augue mauris augue neque. Posuere lorem ipsum dolor sit amet consectetur adipiscing. Porta
                             non pulvinar neque laoreet. Viverra ipsum nunc aliquet bibendum. Iaculis urna id volutpat lacus.

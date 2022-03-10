@@ -40,22 +40,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
   </nav>
 </header>
+
+
+
+<?php if($v_info['LoanStatus'] == 0):?>
+                        <!-- content to be displayed to a new user or when the user account has been deactivated -->
+                        <div class="loan-form">
+                            <h4> Welcome <?php echo ucfirst($_SESSION['username'])?>,</h4>
+                            
 <div class="card">
 
-  <h5 class="card-header info-color white-text text-center py-4" style="background-color: grey; height:100%; width:1000px">
+
+<h5  style="background-color: grey; height:100%; width:1000px">
       <strong>LOAN FORM</strong>
   </h5>
-
   <!--Card content-->
   <div class="card-body px-lg-5 pt-0">
 
+
       <!-- Form -->
-      <form class="text-center" style="color: #757575;" method="POST">
+      <form class="text-center" style="color: #757575;" action="<?php echo site_url('Member/Apply/approve_application')?>" method="POST">
 
           <!-- Name -->
           <div class="md-form mt-3">
-              <input type="text" name="member_id" id="materialContactFormName" class="form-control">
-              <label for="materialContactFormName"> Member id</label>
+              <input type="text" name="username" id="materialContactFormName" class="form-control">
+              <label for="materialContactFormName"> UserName</label>
 
           </div>
 
@@ -67,30 +76,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
 
           <!-- E-mail -->
-          <div class="md-form">
+          <!-- <div class="md-form">
             <input type="email" name="email" id="materialContactFormEmail" class="form-control">
             <label for="materialContactFormEmail">Email</label>
-        </div>
-        <div class="text-left">
-           Maritual status
-        </div>
-
-                <!-- Group of material radios - option 1 -->
-        <div class="form-check text-left">
-          <input type="radio" name="maritual_status" value="Single" class="form-check-input" id="materialGroupExample1" name="groupOfMaterialRadios">
-          <label class="form-check-label" for="materialGroupExample1">Single</label>
-        </div>
-
-        <!-- Group of material radios - option 2 -->
-        <div class="form-check text-left">
-          <input type="radio" name="maritual_status" value="Married" class="form-check-input" id="materialGroupExample2" name="groupOfMaterialRadios" checked>
-          <label class="form-check-label" for="materialGroupExample2">Married</label>
-        </div>
-        <!-- Group of material radios - option 2 -->
-        <div class="form-check text-left">
-          <input type="radio" name="maritual_status" value="separated" class="form-check-input" id="materialGroupExample3" name="groupOfMaterialRadios" checked>
-          <label class="form-check-label" for="materialGroupExample3">Separated</label>
-        </div>
+        </div> -->
+       
 
 
 
@@ -102,32 +92,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
           <!-- Gross monthly income -->
           <div class="md-form">
-            <input type="number" name="monthly_income" id="materilContactFormEmail" class="form-control">
+            <input type="number" name="income" id="materilContactFormEmail" class="form-control">
             <label for="materialContactFormEmail">Gross Monthly Income</label>
           </div>
 
           <!-- Gross monthly income -->
           <div class="md-form">
-            <input type="number" name="loan_amount" id="materilContactFormAmount" class="form-control">
+            <input type="number" name="amount" id="materilContactFormAmount" class="form-control">
             <label for="materialContactFormAmount">Amount of Loan requested</label>
           </div>
           <!-- Guarantor Name -->
           <div class="md-form mt-3">
-            <input type="text" name="guarantor_name" id="materialConactFormName" class="form-control">
+            <input type="text" name="gname" id="materialConactFormName" class="form-control">
             <label for="materialContactFormName"> Guarantor Name</label>
     
           </div>
 
           <!--Address -->
           <div class="md-form mt-3">
-            <input type="text" name="g_address" id="materialContatFormNae" class="form-control">
+            <input type="text" name="gaddress" id="materialContatFormNae" class="form-control">
             <label for="materialContactFormName"> Address</label>
         
           </div>
 
           <!-- E-mail -->
           <div class="md-form">
-              <input type="email" id="materilContactFormEmail" name="g_email" class="form-control">
+              <input type="gemail" id="materilContactFormEmail" name="gemail" class="form-control">
               <label for="materialContactFormEmail">E-mail</label>
           </div>
 
@@ -149,5 +139,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
 
 </div>
+
+<?php elseif($v_info['LoanStatus'] == 1):?>
+                     
+                        <div class="pending-message">
+                            <h4> Hello <?php echo $_SESSION['username']?></h4>
+                            <p>
+                             Hello your application was sent successfully. Wait for the admin to approve your loan. If this takes longer than 72 hours contact admin via the email <b> mikielina@gmail.com</b> 
+                            </p>
+                        </div>
+                       
+                        <?php elseif($v_info['LoanStatus'] == 2): ?>
+                         <?php endif;?> 
+                 
+
+                        
+                  
+                        
 </body>
 </html>
