@@ -11,8 +11,8 @@ Class Login_Model extends CI_Model{
       // fetch by username first
       $this->db->where('Username', $username);
 
-      $this->db->where('Id', $accesscode);
-      $query = $this->db->get('Admin');
+      $this->db->where('Admin_Id', $id);
+      $query = $this->db->get('admin');
       $result = $query->row_array(); // get the row first
 
       if (!empty($result)) {
@@ -22,6 +22,7 @@ Class Login_Model extends CI_Model{
               $session_data = array(
                   'username' => $result['Username'],
                   'email' => $result['Email'],
+
               );
 
               $this->session->set_userdata($session_data);

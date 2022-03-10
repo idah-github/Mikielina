@@ -33,7 +33,7 @@ Class Login extends CI_Controller{
         }
         else{
             $this->session->set_flashdata('error', "Invalid username or password. Try again");
-            return redirect('Admin/Login');
+            return redirect('Admin/Dashboard');
             
         }
 
