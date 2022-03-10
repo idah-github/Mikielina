@@ -6,7 +6,7 @@ Class Login_Model extends CI_Model{
         $this->load->database();
     }
 
-    public function check_login($username,$accesscode, $password){
+    public function check_login($username, $password){
 
       // fetch by username first
       $this->db->where('Username', $username);
@@ -14,16 +14,14 @@ Class Login_Model extends CI_Model{
       $this->db->where('Id', $accesscode);
       $query = $this->db->get('Admin');
       $result = $query->row_array(); // get the row first
-      
+
       if (!empty($result)) {
-         $hashed_password = $result['Password_Hash'];
+         $hashed_password = $result['Password'];
           if (password_verify($password,$hashed_password)){
 
               $session_data = array(
                   'username' => $result['Username'],
                   'email' => $result['Email'],
-                //   'full_names' => $result['Full_Names'],
-                  'admin_id' => $result['Id']
               );
 
               $this->session->set_userdata($session_data);
@@ -35,3 +33,4 @@ Class Login_Model extends CI_Model{
       }            
     }
 }
+
