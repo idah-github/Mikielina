@@ -46,7 +46,7 @@ Class Signup extends CI_Controller{
          array( 
 
              'required' =>'you have not provided %s.',
-             'callback_validate_age' => "Age is not valid" 
+             'callback_validate_age' => "Age is not va" 
              
          ));
 
@@ -87,7 +87,7 @@ Class Signup extends CI_Controller{
          if( $this->form_validation->run() == FALSE){
 
              // redirect(site_url('Member/Signup'));
-                 $this->load->view('Member/signup');
+                 $this->load->view('Member/Application');
          }
 
          else if($query->num_rows() > 0){
@@ -168,7 +168,7 @@ Class Signup extends CI_Controller{
                 $this->session->set_userdata($session_data);
 
                  $this->session->set_flashdata('success'," Your account was created successfully");
-                 redirect('Member/Home');
+                 redirect('Member/Application');
              }
              else{
 
@@ -181,7 +181,7 @@ Class Signup extends CI_Controller{
      }
 
 
-     public function validate_age($age){git
+     public function validate_age($age){
          if ($age< 18){
              return false;
          }

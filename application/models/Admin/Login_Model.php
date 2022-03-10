@@ -6,13 +6,13 @@ Class Login_Model extends CI_Model{
         $this->load->database();
     }
 
-    public function check_login($username,$accesscode, $password){
+    public function check_login($username,$id, $password){
 
       // fetch by username first
       $this->db->where('Username', $username);
 
-      $this->db->where('Id', $accesscode);
-      $query = $this->db->get('Admin');
+      $this->db->where('Admin_Id', $id);
+      $query = $this->db->get('admin');
       $result = $query->row_array(); // get the row first
       
       if (!empty($result)) {
@@ -23,7 +23,7 @@ Class Login_Model extends CI_Model{
                   'username' => $result['Username'],
                   'email' => $result['Email'],
                 //   'full_names' => $result['Full_Names'],
-                  'admin_id' => $result['Id']
+                //   'admin_id' => $result['Admin_Id']
               );
 
               $this->session->set_userdata($session_data);

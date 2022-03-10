@@ -18,7 +18,12 @@ Class Dashboard extends CI_Controller{
 
     }
     public function index(){
+
+        // $check_session = $this->session->userdata('admin_id');
+        
+        // if(empty($check_session)){
+        //     redirect('admin/Dashboard');
         $this->load->view('Admin/Dashboard');
     }
-}
 
+}
